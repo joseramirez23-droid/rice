@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RICE Prioritization</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <h1>RICE Prioritization</h1>
+        <p>Guarda y calcula tus ideas usando Reach, Impact, Confidence y Effort.</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>Nueva idea</h2>
+        <form id="idea-form">
+          <label>
+            Nombre de la idea
+            <input type="text" name="name" placeholder="Ej: Nueva campaña" required />
+          </label>
+          <div class="grid">
+            <label>
+              Reach
+              <input type="number" name="reach" min="0" step="1" required />
+            </label>
+            <label>
+              Impact
+              <input type="number" name="impact" min="0" step="1" required />
+            </label>
+            <label>
+              Confidence (%)
+              <input type="number" name="confidence" min="0" max="100" step="1" required />
+            </label>
+            <label>
+              Effort
+              <input type="number" name="effort" min="0" step="0.1" required />
+            </label>
+          </div>
+          <div class="actions">
+            <span id="error" role="alert"></span>
+            <button type="submit">Guardar</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Ideas guardadas</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Idea</th>
+                <th>Reach</th>
+                <th>Impact</th>
+                <th>Confidence</th>
+                <th>Effort</th>
+                <th>RICE</th>
+              </tr>
+            </thead>
+            <tbody id="idea-rows"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>
